@@ -35,15 +35,50 @@ body {
 
 .nav {
     height: 100vh;
-    min-width: var(--nav-width);
-    background-color: var(--nav-background);
-    padding: 6em 1em;
-    /* border-radius: 150% 0 0 0; */
+    width: var(--nav-width);
+    background: linear-gradient(180deg, #324467, #283142);
+    color: var(--main-white);
+    padding: 1.5rem 0.75em;
+    border-radius: 100px 0 0 0;
     font-size: 16px;
     position: sticky;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     top: 0;
     right: 0;
+}
+
+.nav__logo,
+.app-version {
+    width: 100%;
+    font-family: poppins, serif;
+}
+
+.nav__logo {
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 40px;
+    margin: .8em 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav__items {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.nav__items::-webkit-scrollbar {
+    display: none;
+}
+
+.nav__item-lable {
+    text-overflow: hidden;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .nav li {
@@ -55,7 +90,7 @@ body {
     text-decoration: none;
     color: var(--main-white);
     font-weight: 600;
-    display: block;
+    display: flex;
     padding: 15px;
     transition: all ease 0.4s;
     border-radius: 8px;
@@ -64,6 +99,26 @@ body {
 .nav__link:hover {
     background-color: var(--midnight-blue);
     border-radius: 60px;
+}
+
+.icon-container {
+    margin-left: .5em;
+}
+
+.nav.mini-sidebar {
+    width: 70px;
+    overflow-x: hidden;
+    text-overflow: hidden;
+}
+
+.nav.mini-sidebar .nav__link:hover {
+    background-color: transparent;
+    color: gold;
+}
+
+.nav.nav.mini-sidebar .nav__logo {
+    font-size: 1rem;
+    margin-top: 3em;
 }
 
 #app {
