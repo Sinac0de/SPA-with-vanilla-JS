@@ -1,0 +1,24 @@
+{
+  "name": "spa-with-vanilla-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sinac0de/SPA-with-vanilla-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sinac0de/SPA-with-vanilla-JS/issues"
+  },
+  "homepage": "https://github.com/Sinac0de/SPA-with-vanilla-JS#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
