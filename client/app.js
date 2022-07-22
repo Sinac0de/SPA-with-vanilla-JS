@@ -1,5 +1,9 @@
-//1.what to show to user based on the route
+//1.what to show to user based on the route\
 
+import Dashboard from "/client/pages/Dashboard.js";
+import Products from "/client/pages/Products.js";
+import Posts from "/client/pages/Posts.js";
+import NotFound from "/client/pages/NotFound.js";
 
 /*----------------
      FUNCTIONS 
@@ -7,9 +11,9 @@
 //show content based on the route that user is on
 function router(params) {
     const routes = [
-        { path: "/", view: () => console.log("dashboard page") },
-        { path: "/products", view: () => console.log("products page") },
-        { path: "/contanct-us", view: () => console.log("contanct-us page") },
+        { path: "/", view: Dashboard },
+        { path: "/products", view: Products },
+        { path: "/posts", view: Posts },
     ];
 
     const potentialRoutes = routes.map(item => {
@@ -21,15 +25,17 @@ function router(params) {
 
     //find the isMatch == true object
     let match = potentialRoutes.find((route) => route.isMatch == true);
-    console.log(match.route.view());
 
     //if page not found (like when user puts something randomly in the url)
     if (!match) {
         match = {
-            route: { path: "/not-found", view: () => console.log("not-found page") },
+            route: { path: "/not-found", view: NotFound },
             isMatch: true
         };
     }
+
+    document.querySelector("#app").innerHTML = match.route.view();
+
 }
 
 //change url to new address
