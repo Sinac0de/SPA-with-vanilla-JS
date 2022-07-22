@@ -1,0 +1,73 @@
+@import url(./assets/styles/fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --midnight-blue: #0084ff;
+    --blue-gray: #5885AF;
+    --dark-blue: #274472;
+    --nav-background: #111a29;
+    --main-background: #f3f3f3;
+    --main-font: iransans, serif;
+    --font-size: 15px;
+    --nav-font: BYekan, serif;
+    --nav-width: 200px;
+    --main-black: #000;
+    --main-white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    color: var(--main-black);
+    background-color: var(--main-background);
+}
+
+.main-layout {
+    display: flex;
+}
+
+.nav {
+    height: 100vh;
+    min-width: var(--nav-width);
+    background-color: var(--nav-background);
+    padding: 6em 1em;
+    /* border-radius: 150% 0 0 0; */
+    font-size: 16px;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+}
+
+.nav li {
+    margin: 1em 0;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--main-white);
+    font-weight: 600;
+    display: block;
+    padding: 15px;
+    transition: all ease 0.4s;
+    border-radius: 8px;
+}
+
+.nav__link:hover {
+    background-color: var(--midnight-blue);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+    border-radius: 60px;
+}
+
+#app {
+    height: 200vh;
+    padding: 1em;
+}
