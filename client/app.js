@@ -5,6 +5,8 @@ import Products from "/client/pages/Products.js";
 import Posts from "/client/pages/Posts.js";
 import NotFound from "/client/pages/NotFound.js";
 
+const navBtns = document.querySelectorAll(".nav__link");
+
 /*----------------
      FUNCTIONS 
  ----------------*/
@@ -49,14 +51,15 @@ function navigateTo(url) {
      Event Listeners
  ---------------------*/
 
+
 //check the route when the page is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.addEventListener("click", (e) => {
-        if (e.target.matches("[data-link]")) {
-            e.preventDefault();//prevent refreshing the page
-            navigateTo(e.target.href);
-        }
-    });
+    navBtns.forEach(navBtn => {
+        navBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            navigateTo(e.target.href || e.target.parentElement.href || e.target.parentElement.parentElement.href);
+        });
+    })
     router();
 });
 
