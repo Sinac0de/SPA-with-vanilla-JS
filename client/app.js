@@ -5,7 +5,12 @@ import Products from "/client/pages/Products.js";
 import Posts from "/client/pages/Posts.js";
 import NotFound from "/client/pages/NotFound.js";
 
-const navBtns = document.querySelectorAll(".nav__link");
+const sidebarBtns = document.querySelectorAll(".nav__link");
+//----- SIDEBAR TOGGLER ----//
+const sidebarToggler = document.querySelector(".sidebar-toggler");
+const sidebar = document.querySelector(".nav");
+// select the root element 
+const root = document.documentElement;
 
 /*----------------
      FUNCTIONS 
@@ -40,7 +45,7 @@ function router(params) {
 
 }
 
-//change url to new address
+//push user to new url
 function navigateTo(url) {
     history.pushState(null, null, url);
     router();
@@ -54,8 +59,8 @@ function navigateTo(url) {
 
 //check the route when the page is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    navBtns.forEach(navBtn => {
-        navBtn.addEventListener("click", (e) => {
+    sidebarBtns.forEach(sidebarBtn => {
+        sidebarBtn.addEventListener("click", (e) => {
             e.preventDefault();
             navigateTo(e.target.href || e.target.parentElement.href || e.target.parentElement.parentElement.href);
         });
@@ -65,3 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //call router function everytime the history changes
 window.addEventListener("popstate", router);
+
+//----- SIDEBAR TOGGLER ----//
+sidebarToggler.addEventListener("click", () => {
+    sidebar.classList.toggle("mini-sidebar");
+    if (sidebar.classList.contains("mini-sidebar")) {
+        root.style.setProperty("--nav-width", 70 + "px");
+    } else {
+        root.style.setProperty("--nav-width", 260 + "px");
+    }
+});

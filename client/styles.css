@@ -2,15 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --midnight-blue: #0084ff;
-    --blue-gray: #5885AF;
-    --dark-blue: #274472;
-    --nav-background: #111a29;
+    --main-blue: #0084ff;
     --main-background: #f3f3f3;
     --main-font: iransans, serif;
     --font-size: 15px;
     --nav-font: BYekan, serif;
-    --nav-width: 200px;
+    --nav-width: 260px;
     --main-black: #000;
     --main-white: #fff;
 }
@@ -46,6 +43,7 @@ body {
     flex-direction: column;
     top: 0;
     right: 0;
+
 }
 
 .nav__logo,
@@ -97,16 +95,33 @@ body {
 }
 
 .nav__link:hover {
-    background-color: var(--midnight-blue);
+    background-color: var(--main-blue);
     border-radius: 60px;
 }
 
 .icon-container {
+    cursor: pointer;
+}
+
+.icon-container:not(.sidebar-toggler) {
     margin-left: .5em;
 }
 
-.nav.mini-sidebar {
-    width: 70px;
+#app {
+    height: 200vh;
+    padding: 1em;
+}
+
+/* mini sidebar */
+
+.nav,
+.sidebar-toggler,
+.nav__logo {
+    transition: all 0.4s ease;
+}
+
+
+.mini-sidebar {
     overflow-x: hidden;
     text-overflow: hidden;
 }
@@ -116,12 +131,22 @@ body {
     color: gold;
 }
 
-.nav.nav.mini-sidebar .nav__logo {
+.nav.mini-sidebar .nav__logo {
     font-size: 1rem;
     margin-top: 3em;
 }
 
-#app {
-    height: 200vh;
-    padding: 1em;
+.nav.mini-sidebar .app-version__lable {
+    display: none;
+}
+
+.nav.mini-sidebar .sidebar-toggler {
+    margin: 0 auto;
+    transform: rotate(180deg);
+}
+
+.app-version {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
 }
