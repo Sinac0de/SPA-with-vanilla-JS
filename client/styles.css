@@ -43,7 +43,6 @@ body {
     flex-direction: column;
     top: 0;
     right: 0;
-
 }
 
 .nav__logo,
@@ -149,4 +148,43 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 0.5em;
+}
+
+/* media queries */
+
+@media only screen and (max-width:426px) {
+    .nav {
+        width: 100;
+        padding: 0.5em;
+        width: 95%;
+        border-radius: 40px;
+        height: 100px;
+        position: absolute;
+        display: block;
+        top: unset;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: 10px;
+    }
+
+    .nav__items {
+        display: flex;
+        padding: 0 2em;
+        justify-content: space-between;
+        flex-direction: row;
+        font-size: smaller;
+        border: none;
+    }
+
+    .nav__link {
+        font-size: small;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .nav__logo,
+    .app-version {
+        display: none;
+    }
 }
